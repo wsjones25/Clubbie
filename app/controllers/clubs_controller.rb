@@ -37,21 +37,21 @@ class ClubsController < ApplicationController
 				format.html { redirect_to clubs_path, notice: 'Your club is now live.' }
 			else 
 				format.html { render :new }
+			end
 		end
 	end
 
 	def show
 	end
 
-end
-
-private
+	private
 	def club_params
     	params.require(:club).permit(
 			:club_name, 
 			:sport, 
 			:main_image, 
-			:address
+			:address,
+			:club_user_id
     	)
 	end
 

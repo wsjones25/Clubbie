@@ -3,7 +3,7 @@
 <!-- I think the issue here is that the form_for looks for the plural version of the object. 
 	 However since I've declared a singular resource :club, the path helper method is never created. -->
 
-<%= form_for(club) do |f| %>
+<%= form_for(@club, url: club_user_club_path) do |f| %>
 	<div class="field">
 		<%= f.label :club_name %>
 		<%= f.text_field :club_name %>

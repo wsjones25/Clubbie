@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_17_000439) do
+ActiveRecord::Schema.define(version: 2018_12_17_083050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2018_12_17_000439) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "club_user_id"
+    t.index ["club_user_id"], name: "index_clubs_on_club_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +60,5 @@ ActiveRecord::Schema.define(version: 2018_12_17_000439) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "clubs", "club_users"
 end

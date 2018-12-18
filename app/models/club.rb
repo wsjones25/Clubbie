@@ -1,5 +1,6 @@
 class Club < ApplicationRecord
 	include PlaceholderConcern
+	belongs_to :club_user, optional: true
 
 	validates_presence_of :club_name, :sport, :address, :main_image
 
