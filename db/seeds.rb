@@ -6,11 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Club.create!(club_name: "Harpenden Cricket Club", sport: "Cricket", main_image: "http://placehold.it/350x200", address: "1 High Road, Harpenden")
-Club.create!(club_name: "Tring Rugby Club", sport: "Rugby", main_image: "http://placehold.it/350x200", address: "1 High Road, Tring")
-Club.create!(club_name: "Hankley Common", sport: "Golf", main_image: "http://placehold.it/350x200", address: "1 High Road, Tilford")
-Club.create!(club_name: "Redbourn FC", sport: "Football", main_image: "http://placehold.it/350x200", address: "1 High Road, Redbourn")
-Club.create!(club_name: "UCS Rugby Club", sport: "Rugby", main_image: "http://placehold.it/350x200", address: "1 High Road, West Hampstead")
-Club.create!(club_name: "Brocket Hall Golf Club", sport: "Golf", main_image: "http://placehold.it/350x200", address: "1 High Road, Welwyn")
+User.create!(email: "user+1@test.com", password: "123456", password_confirmation: "123456")
+User.create!(email: "user+2@test.com", password: "123456", password_confirmation: "123456")
+User.create!(email: "user+3@test.com", password: "123456", password_confirmation: "123456")
+User.create!(email: "user+4@test.com", password: "123456", password_confirmation: "123456")
+User.create!(email: "user+5@test.com", password: "123456", password_confirmation: "123456")
+User.create!(email: "user+6@test.com", password: "123456", password_confirmation: "123456")
+
+puts "6 sporty people created"
+
+ClubUser.create!(email: "club+1@test.com", password: "123456", password_confirmation: "123456")
+ClubUser.create!(email: "club+2@test.com", password: "123456", password_confirmation: "123456")
+ClubUser.create!(email: "club+3@test.com", password: "123456", password_confirmation: "123456")
+ClubUser.create!(email: "club+4@test.com", password: "123456", password_confirmation: "123456")
+ClubUser.create!(email: "club+5@test.com", password: "123456", password_confirmation: "123456")
+ClubUser.create!(email: "club+6@test.com", password: "123456", password_confirmation: "123456")
+
+puts "6 clubs created"
+
+Club.create!(club_name: "Harpenden Cricket Club", sport: "Cricket", main_image: "http://placehold.it/350x200", address: "1 High Road, Harpenden", club_user_id: ClubUser.first.id)
+Club.create!(club_name: "Tring Rugby Club", sport: "Rugby", main_image: "http://placehold.it/350x200", address: "1 High Road, Tring", club_user_id: ClubUser.second.id)
+Club.create!(club_name: "Hankley Common", sport: "Golf", main_image: "http://placehold.it/350x200", address: "1 High Road, Tilford", club_user_id: ClubUser.third.id)
+Club.create!(club_name: "Redbourn FC", sport: "Football", main_image: "http://placehold.it/350x200", address: "1 High Road, Redbourn", club_user_id: ClubUser.fourth.id)
+Club.create!(club_name: "UCS Rugby Club", sport: "Rugby", main_image: "http://placehold.it/350x200", address: "1 High Road, West Hampstead", club_user_id: ClubUser.fifth.id)
+Club.create!(club_name: "Brocket Hall Golf Club", sport: "Golf", main_image: "http://placehold.it/350x200", address: "1 High Road, Welwyn", club_user_id: ClubUser.last.id)
 
 puts "6 clubs created"

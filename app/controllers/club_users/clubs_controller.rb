@@ -8,7 +8,7 @@ module ClubUsers
     def update
       respond_to do |format|
         if @club.update(club_params)
-          format.html { redirect_to clubs_path, notice: 'Your record sucessfully updated.'}
+          format.html { redirect_to club_user_club_path, notice: 'Your record sucessfully updated.'}
         else 
           format.html { render :edit}
         end
@@ -31,7 +31,7 @@ module ClubUsers
 
       respond_to do |format|
         if @club.save
-          format.html { redirect_to clubs_path, notice: 'Your club is now live.' }
+          format.html { redirect_to club_user_club_path, notice: 'Your club is now live.' }
         else 
           format.html { render :new }
         end

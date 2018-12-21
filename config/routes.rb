@@ -23,9 +23,6 @@ Rails.application.routes.draw do
   get 'login', to: 'pages#login'
   get 'sign_up', to: 'pages#sign_up'
   
-  
-  # 1. Require route for clubs index and show, that is not linked to club_user - think I should create a search controller for this.
-  # 2. Require club to be linked to the club_user for new, create, edit - ideal routing for show action would be /profile - at the moment it is /club_users/:club_user_id/club/ 
   resource :club_user, only: [] do
     resource :club, controller: 'club_users/clubs'
   end
