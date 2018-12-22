@@ -16,7 +16,7 @@ User.create!(email: "user+6@test.com", password: "123456", password_confirmation
 puts "6 sporty people created"
 
 ClubUser.create!(email: "club+1@test.com", password: "123456", password_confirmation: "123456", first_name: "Will", last_name: "Jones")
-ClubUser.create!(email: "club+2@test.com", password: "123456", password_confirmation: "123456", first_name: "Will", last_name: "Jones")
+ClubUser.create!(email: "club+2@test.com", password: "123456", password_confirmation: "123456", first_name: "Bill", last_name: "Jones")
 ClubUser.create!(email: "club+3@test.com", password: "123456", password_confirmation: "123456", first_name: "Will", last_name: "Jones")
 ClubUser.create!(email: "club+4@test.com", password: "123456", password_confirmation: "123456", first_name: "Will", last_name: "Jones")
 ClubUser.create!(email: "club+5@test.com", password: "123456", password_confirmation: "123456", first_name: "Will", last_name: "Jones")
