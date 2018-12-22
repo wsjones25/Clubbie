@@ -24,8 +24,14 @@ Rails.application.routes.draw do
   get 'sign_up', to: 'pages#sign_up'
   
   resource :club_user, only: [] do
-    resource :club, controller: 'club_users/clubs'
+    resource :club, controller: 'club_users/clubs' do
+      resources :teams, only: [:new, :create], controller: 'club_users/clubs/teams'
+    end
   end
+
+  # namespace :club_user do
+  #   resource :club
+  # end
 
   resources :clubs
 end

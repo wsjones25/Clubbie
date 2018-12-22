@@ -27,7 +27,9 @@ module ClubUsers
     end
 
     def create
+      #@club = Club.new(user: current_club_user, club_name: club_params[:club_name])
       @club = current_club_user.build_club(club_params)
+      #@clubcurrent_club_user.clubs.build(club_params)
 
       respond_to do |format|
         if @club.save

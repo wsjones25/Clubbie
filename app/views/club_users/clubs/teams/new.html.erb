@@ -1,0 +1,33 @@
+<h3>Team info</h3>
+
+<%= form_for(@team, url: club_user_club_teams_path) do |f| %>
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :team_type %>
+		<%= f.text_field :team_type %>
+	</div>
+
+	<div class="field">
+		<%= f.label :league %>
+		<%= f.text_field :league %>
+	</div>
+
+	<div class="field">
+		<%= f.label :last_year_position %>
+		<%= f.text_field :last_year_position %>
+	</div>
+
+	<div class="field">
+		<%= f.label :training %>
+		<%= f.text_field :training %>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>
