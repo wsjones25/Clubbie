@@ -4,6 +4,23 @@ class ClubUsers::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  def after_sign_up_path_for(resource)
+    "/club_user/club/new"
+  end
+ 
+  def after_inactive_sign_up_path_for(resource)
+    "/club_user/club/new"
+  end
+
+  private
+  def sign_up_params
+    params.require(:club_user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def account_update_params
+    params.require(:club_user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
